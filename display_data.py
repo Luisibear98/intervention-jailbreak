@@ -4,8 +4,8 @@ from sklearn.decomposition import PCA
 from pathlib import Path
 
 # Load datasets
-prompts_jailbreaking = np.load("./activations/prompts_jailbreaking.npy", allow_pickle=True)
-no_prompts_jailbreaking = np.load("./activations/no_prompts_jailbreaking.npy", allow_pickle=True)
+prompts_jailbreaking = np.load("./activations/prompts_jailbreaking_after_intervention.npy", allow_pickle=True)
+no_prompts_jailbreaking = np.load("./activations/no_prompts_jailbreaking_after_intervention.npy", allow_pickle=True)
 
 print(f"Jailbreaking samples: {len(prompts_jailbreaking)}")
 print(f"Non-jailbreaking samples: {len(no_prompts_jailbreaking)}")
@@ -17,7 +17,7 @@ no_prompts_jailbreaking = np.array(no_prompts_jailbreaking).reshape(len(no_promp
 n_components = 2  # Number of PCA components
 
 # Directory to save images
-output_dir = Path("pca_layer_images")
+output_dir = Path("pca_layer_images_intervention")
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # Loop through each layer
@@ -47,7 +47,7 @@ for layer_idx in range(28):
     plt.grid(True)
 
     # Save the figure
-    save_path = output_dir / f"pca_layer_{layer_idx+1}.png"
+    save_path = output_dir / f"pca_layer_intervention_{layer_idx+1}.png"
     plt.savefig(save_path, dpi=300)
     plt.close()  # Free memory
 
