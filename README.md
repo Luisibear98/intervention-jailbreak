@@ -43,3 +43,25 @@ Utilize display_data.py and tsne_vis.py to analyze and visualize the activation 
 5. **Implement Intervention**:
 
 Apply the strategies in with_intervention.py to mitigate the model's compliance with malicious prompts.
+
+
+## Plots examples
+
+The following shows activations before intervention on earlier layers, as can be seen, there are no clear differences between jailbreak and non-jailbreak prompts activations.
+
+![Alt text](comparing_images/image-4.png "Earlier layers activations")
+
+
+
+However, deeper layers shows more differences between jailbreak and non-jailbreak prompts activations.
+
+![Alt text](comparing_images/image-5.png "Deeper layers activations")
+
+
+After intervention, we have "corrected the activations", forzing the jailbroken prompts to shift to the non-jailbroken area.
+
+![Alt text](comparing_images/image-8.png "Deeper layers activations")
+
+
+
+
