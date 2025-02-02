@@ -14,7 +14,7 @@ LAYER_IDX = 17  # Layer to modify
 COEFF = 1.3  # Scaling factor for intervention
 DEVICE = "cuda"
 
-
+x
 def load_activations():
     """Load and reshape activation vectors."""
     prompts_jailbreaking = np.load("./activations/prompts_jailbreaking.npy", allow_pickle=True)
