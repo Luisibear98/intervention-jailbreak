@@ -20,6 +20,7 @@ This project investigates the detection and mitigation of "jailbroken modes" in 
 
 ## Getting Started
 
+Please follow this in order to replicate experiments
 1. **Clone the Repository**:
 
    ```bash
