@@ -45,7 +45,7 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map="auto",
 )
 
-output_file = "./prompts/classification_results_final_new_intervention_more_rejection.jsonl"
+output_file = "prompts/classification_results_final_new_intervention_more_acceptance.jsonl"
 
 
 coeff = 0.8
@@ -76,7 +76,7 @@ with file_path.open("r", encoding="utf-8") as file:
 
 module = model.model.layers[17]
 top_neurons_to_affect = len(activation_difference_normalized)
-coeff = -1.2
+coeff = 1.3
 for prompt in data_list:  
     with Trace(module,edit_output=act_add(coeff*activation_difference_normalized,top_neurons_to_affect)) as _:
         input_text = prompt['input_text']

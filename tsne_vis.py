@@ -4,8 +4,8 @@ from sklearn.manifold import TSNE
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 
-prompts_jailbreaking = np.load("prompts_jailbreaking.npy", allow_pickle=True)
-no_prompts_jailbreaking = np.load("no_prompts_jailbreaking.npy", allow_pickle=True)
+prompts_jailbreaking = np.load("./activations/prompts_jailbreaking_after_intervention.npy", allow_pickle=True)
+no_prompts_jailbreaking = np.load("./activations/no_prompts_jailbreaking_after_intervention.npy", allow_pickle=True)
 
 data_jailbreak = prompts_jailbreaking.reshape(len(prompts_jailbreaking), 28, 3072)  
 data_nonjailbreak = no_prompts_jailbreaking.reshape(len(no_prompts_jailbreaking), 28, 3072)
@@ -18,7 +18,7 @@ train_nonjailbreak, test_nonjailbreak = train_test_split(data_nonjailbreak, test
 combined_test_data = np.concatenate([test_jailbreak, test_nonjailbreak], axis=0)
 
 # Directory to save images
-output_dir = Path("tsne_test_layer_images")
+output_dir = Path("tsne_test_layer_images_intervention")
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # Loop through each layer to generate t-SNE visualizations
