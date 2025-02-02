@@ -1,5 +1,7 @@
 # Intervention-Jailbreak
 
+For full article please visit -> https://logits.substack.com/p/jailbreak-and-intervention-chronicles
+
 This project investigates the detection and mitigation of "jailbroken modes" in Large Language Models (LLMs). By analyzing internal activations in response to malicious prompts, the aim is to identify patterns indicative of jailbreak attempts and develop strategies to prevent models from complying with such prompts.
 
 ## Project Structure
